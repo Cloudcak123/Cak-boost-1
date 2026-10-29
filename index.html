@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAK BOOST | Social Media Services</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#0b1020;color:#fff}
+header{padding:20px;background:#121a30;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #273452}
+.logo{font-size:23px;font-weight:900;color:#39e6b5}
+.logo span{color:#fff}
+header a{color:#fff;text-decoration:none}
+.hero{padding:40px 20px;text-align:center;background:linear-gradient(140deg,#122b45,#101329)}
+.hero h1{font-size:34px;margin:10px 0;color:#39e6b5}
+.hero p{color:#c3cde0;line-height:1.6}
+.badge{display:inline-block;background:#193c3b;color:#70f6d0;padding:8px 13px;border-radius:30px;font-size:12px}
+.container{max-width:850px;margin:auto;padding:22px 16px}
+h2{font-size:22px}
+.card{background:#141d32;border:1px solid #293956;border-radius:15px;padding:18px;margin:15px 0}
+label{display:block;margin:14px 0 7px;color:#c8d3e7;font-size:14px}
+input,select{width:100%;padding:13px;border-radius:9px;border:1px solid #33415c;background:#0b1325;color:white;font-size:15px}
+button{border:0;border-radius:9px;padding:14px;background:#39e6b5;color:#07131b;font-weight:bold;font-size:15px;width:100%;margin-top:17px}
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.service{padding:14px;background:#10182a;border:1px solid #293956;border-radius:10px;text-align:center}
+.service b{display:block;margin-bottom:7px}
+.small{font-size:12px;color:#9daec9;line-height:1.6}
+.price{font-size:20px;color:#39e6b5;font-weight:bold}
+footer{text-align:center;padding:25px;color:#94a3bd;border-top:1px solid #273452}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">CAK <span>BOOST</span></div>
+<a href="#order">Order Now ↓</a>
+</header><section class="hero">
+<div class="badge">SOCIAL MEDIA GROWTH PLATFORM</div>
+<h1>Grow Your Social Media</h1>
+<p>Discover social media promotion services for your favourite platforms.<br>Simple ordering. Clear pricing. Convenient support.</p>
+</section><main class="container">
+<h2>Our Platforms</h2>
+<div class="services">
+<div class="service">🟢<b>WhatsApp</b><span class="small">Channel promotion</span></div>
+<div class="service">🔵<b>Facebook</b><span class="small">Likes & followers</span></div>
+<div class="service">📸<b>Instagram</b><span class="small">Likes & followers</span></div>
+<div class="service">🎵<b>TikTok</b><span class="small">Views & followers</span></div>
+<div class="service">▶️<b>YouTube</b><span class="small">Views & subscribers</span></div>
+<div class="service">🌐<b>Other Services</b><span class="small">More platforms</span></div>
+</div><section class="card" id="order">
+<h2>Place an Order</h2>
+<p class="small">Choose a platform and enter your public profile or post link.</p><label>Platform</label>
+<select id="platform">
+
+<option>WhatsApp</option>
+<option>Facebook</option>
+<option>Instagram</option>
+<option>TikTok</option>
+<option>YouTube</option>
+<option>Other</option>
+</select><label>Service</label>
+<select id="service">
+
+<option>Followers</option>
+<option>Likes</option>
+<option>Views</option>
+<option>Channel Members</option>
+<option>Subscribers</option>
+</select><label>Profile or Post Link</label>
+<input id="link" type="url" placeholder="https://..." required>
+
+<label>Quantity</label>
+<input id="quantity" type="number" min="1" placeholder="e.g. 100" required>
+
+<p class="small">Prices and availability will be shown after provider services are connected.</p>
+<button onclick="prepareOrder()">Continue</button>
+<p id="message" class="small"></p>
+</section><section class="card">
+<h2>My Orders & Support</h2>
+<p class="small">Order tracking and customer support will be enabled after the secure backend is connected.</p>
+</section>
+</main><footer>
+<strong>CAK BOOST</strong><br>
+Social Media Services Platform<br>
+<p class="small">Demo version — no payment is collected and no live order is submitted.</p>
+</footer><script>
+function prepareOrder(){
+ const link=document.getElementById('link').value.trim();
+ const qty=Number(document.getElementById('quantity').value);
+ const message=document.getElementById('message');
+ if(!link.startsWith('https://')&&!link.startsWith('http://')){
+   message.textContent='Please enter a valid public link.';
+   return;
+ }
+ if(!Number.isInteger(qty)||qty<1){
+   message.textContent='Please enter a valid quantity.';
+   return;
+ }
+ message.textContent='Your details look valid. Live ordering is not enabled yet; provider API and secure payment integration are still required.';
+}
+</script></body>
+</html>
